@@ -48,17 +48,17 @@ const teams: Ref<Team[]> = ref([
 </script>
 
 <template>
-  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-    <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+  <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
+    <div class="mx-auto mb-8 max-w-screen-sm text-center lg:mb-16">
+      <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
         Copa de Brazil - Temporada 2024
       </h2>
-      <p class="text-gray-500 lg:mb-16 sm:text-xl dark:text-gray-400">
+      <p class="text-gray-500 dark:text-gray-400 sm:text-xl lg:mb-16">
         El fútbol es parte integral de la cultura brasileña y la Copa Nacional es un reflejo
         vibrante de esta pasión por el deporte rey!
       </p>
     </div>
-    <div class="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2 xl:mb-16 xl:grid-cols-3">
+    <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:mb-16 xl:grid-cols-3">
       <TeamCard v-for="(team, i) in teams" :key="i" :team="team" class="mx-auto" />
     </div>
   </div>

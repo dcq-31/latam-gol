@@ -5,14 +5,14 @@ import FacebookIcon from '@/components/icons/FacebookIcon.vue'
 </script>
 
 <template>
-  <footer class="w-full p-4 bg-gray-50 sm:py-8 md:py-12 dark:bg-gray-800">
+  <footer class="w-full bg-gray-50 p-4 dark:bg-gray-800 sm:py-8 md:py-12">
     <div class="mx-auto max-w-screen-xl">
       <div class="lg:flex lg:justify-between">
         <!-- Website description -->
-        <div class="mb-6 lg:mb-0 space-y-2">
+        <div class="mb-6 space-y-2 lg:mb-0">
           <RouterLink to="/" class="flex items-center">
             <img src="@/assets/images/logo.png" class="mr-3 w-10" alt="LATAM Gol Logo" />
-            <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
+            <span class="self-center whitespace-nowrap text-xl font-semibold dark:text-white"
               >LATAM Gol</span
             >
           </RouterLink>
@@ -25,7 +25,7 @@ import FacebookIcon from '@/components/icons/FacebookIcon.vue'
         <div class="grid grid-cols-2 gap-8 md:grid-cols-4">
           <!-- Contact -->
           <div>
-            <h2 class="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            <h2 class="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
               Contacto
             </h2>
             <ul class="text-gray-800 dark:text-gray-400">
@@ -38,7 +38,7 @@ import FacebookIcon from '@/components/icons/FacebookIcon.vue'
 
           <!-- Legal -->
           <div>
-            <h2 class="mb-4 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            <h2 class="mb-4 text-sm font-semibold uppercase text-gray-900 dark:text-white">
               Información Legal
             </h2>
             <ul class="text-gray-800 dark:text-gray-400">
@@ -62,7 +62,7 @@ import FacebookIcon from '@/components/icons/FacebookIcon.vue'
             <div class="flex flex-row items-center">
               <div class="relative">
                 <div
-                  class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"
+                  class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3.5"
                 >
                   <MailIcon class="text-gray-500 dark:text-gray-400" />
                 </div>
@@ -80,19 +80,19 @@ import FacebookIcon from '@/components/icons/FacebookIcon.vue'
         </div>
       </div>
 
-      <span class="block text-gray-800 text-center dark:text-gray-400 mt-4"
+      <span class="mt-4 block text-center text-gray-800 dark:text-gray-400"
         >Web hosting by
         <a href="https://www.icdsoft.com" class="hover:underline-style">ICDSoft</a>.</span
       >
 
-      <hr class="my-6 border-gray-300 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <hr class="my-6 border-gray-300 dark:border-gray-700 sm:mx-auto lg:my-8" />
 
       <!-- Social media -->
       <div class="sm:flex sm:items-center sm:justify-between">
-        <span class="text-gray-800 sm:text-center dark:text-gray-400">© 2024 LATAM Gol. </span>
-        <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+        <span class="text-gray-800 dark:text-gray-400 sm:text-center">© 2024 LATAM Gol. </span>
+        <div class="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
           <a href="#" class="text-gray-800 hover:text-gray-900 dark:hover:text-white">
-            <FacebookIcon class="w-6 h-6" />
+            <FacebookIcon class="h-6 w-6" />
           </a>
         </div>
       </div>

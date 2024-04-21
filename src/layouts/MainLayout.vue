@@ -6,7 +6,7 @@ import MainFooter from '../components/layout/MainFooter.vue'
 <template>
   <div>
     <MainNavbar />
-    <main class="pt-12 bg-white dark:bg-gray-900">
+    <main class="bg-white pt-12 dark:bg-gray-900">
       <slot></slot>
     </main>
     <MainFooter />
