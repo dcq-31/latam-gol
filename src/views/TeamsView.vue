@@ -48,7 +48,7 @@ const teams: Ref<Team[]> = ref([
 </script>
 
 <template>
-  <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
+  <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-10">
     <div class="mx-auto mb-8 max-w-screen-sm text-center lg:mb-16">
       <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
         Copa de Brazil - Temporada 2024

@@ -104,21 +104,23 @@ function setSelectedSummary(league: League) {
 }
 </script>
 <template>
-  <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
+  <div class="mx-auto max-w-screen-xl bg-gray-50 px-4 py-8 lg:px-6 lg:py-16">
     <div class="flex flex-col justify-around gap-5 xl:flex-row xl:items-start">
       <div class="flex flex-col gap-5 sm:flex-row sm:items-start">
         <!-- Player information -->
         <div
-          class="mx-auto w-full max-w-lg space-y-4 rounded-lg border border-gray-200 bg-white pb-2 pt-4 dark:border-gray-700 dark:bg-gray-800"
+          class="mx-auto w-full max-w-lg flex-1 space-y-4 rounded-b-lg rounded-t-3xl bg-white pb-2 dark:border-gray-700 dark:bg-gray-800"
         >
-          <img
-            :src="player.image_url"
-            :alt="`profile image of ${player.name}`"
-            class="mx-auto w-full max-w-48 rounded-full"
-          />
+          <div class="h-40 rounded-b-xl rounded-t-3xl bg-blue-500">
+            <img
+              :src="player.image_url"
+              :alt="`profile image of ${player.name}`"
+              class="relative -bottom-16 mx-auto w-full max-w-36 rounded-full"
+            />
+          </div>
 
-          <div class="p-5">
-            <h5 class="text-center text-xl font-bold leading-none text-gray-900 dark:text-white">
+          <div class="p-5 pt-12">
+            <h5 class="text-center text-xl font-medium text-gray-800 dark:text-white">
               {{ player.name }}
             </h5>
 
@@ -126,9 +128,9 @@ function setSelectedSummary(league: League) {
               <li class="py-3 sm:py-4">
                 <div class="flex items-center">
                   <div class="ms-4 min-w-0 flex-1">
-                    <p class="truncate text-sm font-medium text-gray-900 dark:text-white">Edad</p>
+                    <p class="truncate text-gray-500 dark:text-white">Edad</p>
                   </div>
-                  <div class="text-base font-semibold text-gray-900 dark:text-white">
+                  <div class="font-medium text-gray-800 dark:text-white">
                     {{ player.age }}
                   </div>
                 </div>
@@ -137,11 +139,9 @@ function setSelectedSummary(league: League) {
               <li class="py-3 sm:py-4">
                 <div class="flex items-center">
                   <div class="ms-4 min-w-0 flex-1">
-                    <p class="truncate text-sm font-medium text-gray-900 dark:text-white">
-                      Fecha de nacimiento
-                    </p>
+                    <p class="truncate text-gray-500 dark:text-white">Fecha de nacimiento</p>
                   </div>
-                  <div class="text-base font-semibold text-gray-900 dark:text-white">
+                  <div class="font-medium text-gray-800 dark:text-white">
                     {{ player.date_of_birth }}
                   </div>
                 </div>
@@ -150,11 +150,9 @@ function setSelectedSummary(league: League) {
               <li class="py-3 sm:py-4">
                 <div class="flex items-center">
                   <div class="ms-4 min-w-0 flex-1">
-                    <p class="truncate text-sm font-medium text-gray-900 dark:text-white">
-                      Lugar de nacimiento
-                    </p>
+                    <p class="truncate text-gray-500 dark:text-white">Lugar de nacimiento</p>
                   </div>
-                  <div class="text-base font-semibold text-gray-900 dark:text-white">
+                  <div class="text-base font-medium text-gray-800 dark:text-white">
                     {{ player.place_of_birth }}
                   </div>
                 </div>
@@ -162,11 +160,9 @@ function setSelectedSummary(league: League) {
               <li class="py-3 sm:py-4">
                 <div class="flex items-center">
                   <div class="ms-4 min-w-0 flex-1">
-                    <p class="truncate text-sm font-medium text-gray-900 dark:text-white">
-                      País de nacimiento
-                    </p>
+                    <p class="truncate text-gray-500 dark:text-white">País de nacimiento</p>
                   </div>
-                  <div class="text-base font-semibold text-gray-900 dark:text-white">
+                  <div class="text-base font-medium text-gray-800 dark:text-white">
                     {{ player.country_of_birth }}
                   </div>
                 </div>
@@ -174,11 +170,9 @@ function setSelectedSummary(league: League) {
               <li class="py-3 sm:py-4">
                 <div class="flex items-center">
                   <div class="ms-4 min-w-0 flex-1">
-                    <p class="truncate text-sm font-medium text-gray-900 dark:text-white">
-                      Nacionalidad
-                    </p>
+                    <p class="truncate text-gray-500 dark:text-white">Nacionalidad</p>
                   </div>
-                  <div class="text-base font-semibold text-gray-900 dark:text-white">
+                  <div class="text-base font-medium text-gray-800 dark:text-white">
                     {{ player.nationality }}
                   </div>
                 </div>
@@ -186,9 +180,9 @@ function setSelectedSummary(league: League) {
               <li class="py-3 sm:py-4">
                 <div class="flex items-center">
                   <div class="ms-4 min-w-0 flex-1">
-                    <p class="truncate text-sm font-medium text-gray-900 dark:text-white">Altura</p>
+                    <p class="truncate text-gray-500 dark:text-white">Altura</p>
                   </div>
-                  <div class="text-base font-semibold text-gray-900 dark:text-white">
+                  <div class="font-medium text-gray-800 dark:text-white">
                     {{ player.height }} cm
                   </div>
                 </div>
@@ -196,9 +190,9 @@ function setSelectedSummary(league: League) {
               <li class="py-3 sm:py-4">
                 <div class="flex items-center">
                   <div class="ms-4 min-w-0 flex-1">
-                    <p class="truncate text-sm font-medium text-gray-900 dark:text-white">Peso</p>
+                    <p class="truncate text-gray-500 dark:text-white">Peso</p>
                   </div>
-                  <div class="text-base font-semibold text-gray-900 dark:text-white">
+                  <div class="text-base font-medium text-gray-800 dark:text-white">
                     {{ player.weight }} kg
                   </div>
                 </div>
@@ -210,9 +204,9 @@ function setSelectedSummary(league: League) {
 
         <!-- Leagues -->
         <div
-          class="mx-auto w-full max-w-lg rounded-lg border border-gray-200 bg-white p-4 dark:border-gray-700 dark:bg-gray-800 sm:p-6"
+          class="mx-auto w-full max-w-lg rounded-lg bg-white p-4 dark:border-gray-700 dark:bg-gray-800 sm:p-6"
         >
-          <h5 class="mb-3 font-semibold text-gray-800 dark:text-white">Ligas</h5>
+          <h5 class="mb-3 text-lg font-medium text-gray-800 dark:text-white">Ligas</h5>
 
           <ul class="my-4 space-y-3">
             <li v-for="(league, i) in leagues" :key="`player-view-league-${i}`">
@@ -221,7 +215,7 @@ function setSelectedSummary(league: League) {
                 :class="
                   league.name == selected_summary.league
                     ? 'bg-blue-500 text-white hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-500'
-                    : 'bg-gray-50 text-gray-800 hover:bg-gray-100 dark:bg-gray-600 dark:hover:bg-gray-500'
+                    : ' text-gray-500 hover:text-gray-700 dark:bg-gray-600 dark:hover:bg-gray-500'
                 "
                 @click="setSelectedSummary(league)"
               >
@@ -233,83 +227,96 @@ function setSelectedSummary(league: League) {
         </div>
         <!-- / Leagues -->
       </div>
+
       <!-- League summary -->
-      <div
-        class="mb-8 grid flex-1 grid-cols-2 rounded-lg border border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-800"
-      >
-        <!-- Position -->
+      <div class="rounded-lg">
         <div
-          class="flex flex-col items-center justify-center rounded-tl-lg border-b border-e border-gray-200 bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
+          class="mx-auto flex w-fit flex-row items-center rounded-t-xl bg-blue-500 p-2 text-white"
         >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Posición</h3>
-          <p class="my-2">{{ selected_summary.position }}</p>
+          <img
+            :src="selected_summary.league_image_url"
+            :alt="`${selected_summary.league} league`"
+            class="w-8"
+          />
+          <span class="ms-3 flex-1 whitespace-nowrap">{{ selected_summary.league }}</span>
         </div>
-        <!-- / Position  -->
 
-        <!-- Alignments -->
-        <div
-          class="flex flex-col items-center justify-center rounded-t-lg border-b border-e border-gray-200 bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Alineaciones</h3>
-          <p class="my-2">{{ selected_summary.alignments }}</p>
-        </div>
-        <!-- / Alignments -->
+        <div class="mb-8 grid grid-cols-2 bg-white py-4 dark:bg-gray-800">
+          <!-- Position -->
+          <div
+            class="flex flex-col items-center justify-center rounded-tl-lg bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
+          >
+            <h3 class="font-medium text-gray-800 dark:text-white">Posición</h3>
+            <p class="my-2 text-gray-500">{{ selected_summary.position }}</p>
+          </div>
+          <!-- / Position  -->
 
-        <!-- Minutes -->
-        <div
-          class="flex flex-col items-center justify-center rounded-tl-lg border-b border-e border-gray-200 bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Minutos</h3>
-          <p class="my-2">{{ selected_summary.minutes }}</p>
-        </div>
-        <!-- / Minutes -->
+          <!-- Alignments -->
+          <div
+            class="flex flex-col items-center justify-center rounded-t-lg bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
+          >
+            <h3 class="font-medium text-gray-800 dark:text-white">Alineaciones</h3>
+            <p class="my-2 text-gray-500">{{ selected_summary.alignments }}</p>
+          </div>
+          <!-- / Alignments -->
 
-        <!-- Rating -->
-        <div
-          class="flex flex-col items-center justify-center border-b border-e border-gray-200 bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Calificación</h3>
-          <p class="my-2">{{ selected_summary.rating }}</p>
-        </div>
-        <!-- / Rating -->
+          <!-- Minutes -->
+          <div
+            class="flex flex-col items-center justify-center rounded-tl-lg bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
+          >
+            <h3 class="font-medium text-gray-800 dark:text-white">Minutos</h3>
+            <p class="my-2 text-gray-500">{{ selected_summary.minutes }}</p>
+          </div>
+          <!-- / Minutes -->
 
-        <!-- Second block -->
-        <!-- Position -->
-        <div
-          class="flex flex-col items-center justify-center rounded-tl-lg border-b border-e border-gray-200 bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Posición</h3>
-          <p class="my-2">{{ selected_summary.position }}</p>
-        </div>
-        <!-- / Position  -->
+          <!-- Rating -->
+          <div
+            class="flex flex-col items-center justify-center bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
+          >
+            <h3 class="font-medium text-gray-800 dark:text-white">Calificación</h3>
+            <p class="my-2 text-gray-500">{{ selected_summary.rating }}</p>
+          </div>
+          <!-- / Rating -->
 
-        <!-- Alignments -->
-        <div
-          class="flex flex-col items-center justify-center border-b border-e border-gray-200 bg-white p-2 text-center dark:border-gray-700 dark:bg-gray-800"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Alineaciones</h3>
-          <p class="my-2">{{ selected_summary.alignments }}</p>
-        </div>
-        <!-- / Alignments -->
+          <!-- Second block -->
+          <!-- Position -->
+          <div
+            class="flex flex-col items-center justify-center rounded-tl-lg bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
+          >
+            <h3 class="font-medium text-gray-800 dark:text-white">Posición</h3>
+            <p class="my-2 text-gray-500">{{ selected_summary.position }}</p>
+          </div>
+          <!-- / Position  -->
 
-        <!-- Minutes -->
-        <div
-          class="flex flex-col items-center justify-center rounded-bl-lg border-b border-e border-gray-200 bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Minutos</h3>
-          <p class="my-2">{{ selected_summary.minutes }}</p>
-        </div>
-        <!-- / Minutes -->
+          <!-- Alignments -->
+          <div
+            class="flex flex-col items-center justify-center bg-white p-2 text-center dark:border-gray-700 dark:bg-gray-800"
+          >
+            <h3 class="font-medium text-gray-800 dark:text-white">Alineaciones</h3>
+            <p class="my-2 text-gray-500">{{ selected_summary.alignments }}</p>
+          </div>
+          <!-- / Alignments -->
 
-        <!-- Rating -->
-        <div
-          class="flex flex-col items-center justify-center rounded-t-none rounded-br-lg border-b border-e border-gray-200 bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
-        >
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Calificación</h3>
-          <p class="my-2">{{ selected_summary.rating }}</p>
+          <!-- Minutes -->
+          <div
+            class="flex flex-col items-center justify-center rounded-bl-lg bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
+          >
+            <h3 class="font-medium text-gray-800 dark:text-white">Minutos</h3>
+            <p class="my-2 text-gray-500">{{ selected_summary.minutes }}</p>
+          </div>
+          <!-- / Minutes -->
+
+          <!-- Rating -->
+          <div
+            class="rounded-br-lgbg-white flex flex-col items-center justify-center rounded-t-none p-4 text-center dark:border-gray-700 dark:bg-gray-800"
+          >
+            <h3 class="font-medium text-gray-800 dark:text-white">Calificación</h3>
+            <p class="my-2 text-gray-500">{{ selected_summary.rating }}</p>
+          </div>
+          <!-- / Rating -->
         </div>
-        <!-- / Rating -->
       </div>
+
       <!-- League summary -->
     </div>
   </div>
