@@ -1,39 +1,17 @@
-# latamgol
+# LATAM Gol Demo
 
-This template should help get you started developing with Vue 3 in Vite.
+Este repositorio contiene el código fuente del sitio web demo de [LATAM Gol](https://latamgol.com/).
 
-## Recommended IDE Setup
+## Características
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Vue.js**: El sitio web utiliza Vue.js como el framework principal para el desarrollo del frontend, lo que garantiza una interfaz de usuario dinámica y altamente interactiva.
+  
+- **Tailwind CSS**: Tailwind CSS se utiliza para el diseño y la personalización del sitio, proporcionando un enfoque basado en clases que facilita la creación de estilos personalizados de manera eficiente.
 
-## Type Support for `.vue` Imports in TS
+- **Flowbite**: Flowbite es un conjunto de componentes y utilidades basado en Tailwind CSS que se utiliza para agilizar el desarrollo y mejorar la coherencia del diseño.
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+- **Aplicación Web Progresiva (PWA)**: xperiencia de usuario mejorada, accesibilidad offline, instalación fácil y actualizaciones automáticas.
 
-## Customize configuration
+## Demo
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-pnpm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-pnpm dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-pnpm lint
-```
+Puedes ver la demostración del sitio web en línea en la siguiente dirección: [LATAM Gol Demo](https://latamgol-demo.zumvida.com/)
