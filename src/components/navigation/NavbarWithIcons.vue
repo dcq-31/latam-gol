@@ -42,7 +42,7 @@ const LINKS: Link[] = [
 function toPage(name: string) {
   // not navigate to empty views
   if (name != ROUTES.SEARCH && name != ROUTES.LIVE_MATCHES) {
-    $router.push({ name })
+    $router.push({ name: name })
   }
   currentPage.value = name as Pages
 }
