@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import type { Team } from '@/types/teams'
+import { useRouter } from 'vue-router'
+import { storeToRefs } from 'pinia'
+import { useAppStore, type Pages } from '@/stores/app'
+import type { Team } from '@/types/team'
+import { ROUTES } from '@/router/names'
 
 /**
  * Props
@@ -10,16 +14,31 @@ defineProps<{ team: Team }>()
 /**
  * Data
  */
+const $router = useRouter()
+const { currentPage } = storeToRefs(useAppStore())
+
 const LINKS = [
-  { label: 'Jugadores', to: '/' },
-  { label: 'Calendario', to: '/' },
-  { label: 'Estadísticas', to: '/' }
+  { label: 'Jugadores', to: ROUTES.PLAYER },
+  { label: 'Calendario', to: ROUTES.HOME },
+  { label: 'Estadísticas', to: ROUTES.HOME }
 ]
+
+/**
+ * Methods
+ */
+
+function toPage(name: string) {
+  // not navigate to empty views
+  if (name != ROUTES.SEARCH && name != ROUTES.LIVE_MATCHES) {
+    $router.push({ name: name })
+  }
+  currentPage.value = name as Pages
+}
 </script>
 
 <template>
   <div
-    class="w-full max-w-sm rounded-lg border border-gray-200 bg-white p-4 shadow dark:border-gray-700 dark:bg-gray-800 sm:flex sm:max-w-md sm:flex-col sm:justify-between"
+    class="w-full max-w-sm transform rounded-lg bg-white p-4 transition duration-500 hover:scale-[1.02] hover:shadow dark:bg-gray-800 sm:flex sm:max-w-md sm:flex-col sm:justify-between"
   >
     <div class="flex w-full flex-col gap-y-2 sm:flex-row">
       <!-- Image and name -->
@@ -61,11 +80,15 @@ const LINKS = [
 
     <!-- Links at sm and above -->
     <div class="mt-2 hidden justify-center gap-x-5 sm:flex sm:flex-row">
-      <RouterLink v-for="(link, i) in LINKS" :key="`team-card-link-${i}`" :to="link.to">
-        <button type="button" class="text-link font-medium">
-          {{ link.label }}
-        </button>
-      </RouterLink>
+      <button
+        v-for="(link, i) in LINKS"
+        :key="`team-card-link-${i}`"
+        type="button"
+        class="btn text-link hover:underline-style"
+        @click="toPage(link.to)"
+      >
+        {{ link.label }}
+      </button>
     </div>
   </div>
 </template>

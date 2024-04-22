@@ -1,3 +1,6 @@
+/**
+ * Team
+ */
 export interface Team {
   name: string
   img_url: string

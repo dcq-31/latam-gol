@@ -2,6 +2,7 @@
 import { RouterLink } from 'vue-router'
 import MailIcon from '@/components/icons/MailIcon.vue'
 import FacebookIcon from '@/components/icons/FacebookIcon.vue'
+import { ROUTES } from '@/router/names'
 </script>
 
 <template>
@@ -10,7 +11,7 @@ import FacebookIcon from '@/components/icons/FacebookIcon.vue'
       <div class="lg:flex lg:justify-between lg:gap-x-5">
         <!-- Website description -->
         <div class="mb-6 space-y-2 px-2 lg:mb-0">
-          <RouterLink to="/" class="flex items-center">
+          <RouterLink :to="{ name: ROUTES.HOME }" class="flex items-center">
             <img src="@/assets/images/logo.png" class="mr-3 w-12 lg:w-16" alt="LATAM Gol Logo" />
             <span class="self-center whitespace-nowrap text-xl font-semibold">LATAM Gol</span>
           </RouterLink>
@@ -37,10 +38,12 @@ import FacebookIcon from '@/components/icons/FacebookIcon.vue'
             <h2 class="mb-4 text-sm font-semibold uppercase">Información Legal</h2>
             <ul>
               <li class="mb-4">
-                <RouterLink to="/" class="hover:underline-style">Política de Privacidad</RouterLink>
+                <RouterLink :to="{ name: ROUTES.HOME }" class="hover:underline-style"
+                  >Política de Privacidad</RouterLink
+                >
               </li>
               <li>
-                <RouterLink to="/" class="hover:underline-style"
+                <RouterLink :to="{ name: ROUTES.HOME }" class="hover:underline-style"
                   >Términos &amp; Condiciones</RouterLink
                 >
               </li>

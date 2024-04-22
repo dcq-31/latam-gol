@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { ref, type Ref } from 'vue'
 import TeamCard from '@/components/widget/teamCard.vue'
-import type { Team } from '@/types/teams'
+import type { Team } from '@/types/team'
 
+/**
+ * Data
+ */
 const teams: Ref<Team[]> = ref([
   {
     name: 'Bahia',
@@ -48,15 +51,11 @@ const teams: Ref<Team[]> = ref([
 </script>
 
 <template>
-  <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-10">
+  <div class="mx-auto max-w-screen-xl p-4 lg:px-6 lg:py-8">
     <div class="mx-auto mb-8 max-w-screen-sm text-center lg:mb-16">
-      <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+      <h2 class="text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
         Copa de Brazil - Temporada 2024
       </h2>
-      <p class="text-gray-500 dark:text-gray-400 sm:text-xl lg:mb-16">
-        El fútbol es parte integral de la cultura brasileña y la Copa Nacional es un reflejo
-        vibrante de esta pasión por el deporte rey!
-      </p>
     </div>
     <div class="mb-6 grid grid-cols-1 gap-4 md:grid-cols-2 xl:mb-16 xl:grid-cols-3">
       <TeamCard v-for="(team, i) in teams" :key="i" :team="team" class="mx-auto" />

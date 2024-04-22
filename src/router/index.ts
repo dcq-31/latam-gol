@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { ROUTES } from './names'
 import HomeView from '@/views/HomeView.vue'
 import TeamsView from '@/views/TeamsView.vue'
 import PlayerView from '@/views/PlayerView.vue'
 import SearchView from '@/views/SearchView.vue'
-import LeaguesView from '@/views/LeaguesView.vue'
 import LiveMatchesView from '@/views/LiveMatchesView.vue'
 
 const router = createRouter({
@@ -11,35 +11,33 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: ROUTES.HOME,
       component: HomeView
     },
     {
       path: '/teams',
-      name: 'teams',
+      name: ROUTES.TEAMS,
       component: TeamsView
     },
     {
       path: '/player',
-      name: 'player',
+      name: ROUTES.PLAYER,
       component: PlayerView
     },
     {
       path: '/search',
-      name: 'search',
+      name: ROUTES.SEARCH,
       component: SearchView
     },
     {
-      path: '/leagues',
-      name: 'leagues',
-      component: LeaguesView
-    },
-    {
       path: '/live-matches',
-      name: 'live-matches',
+      name: ROUTES.LIVE_MATCHES,
       component: LiveMatchesView
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 }
+  }
 })
 
 export default router
