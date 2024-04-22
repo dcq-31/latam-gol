@@ -46,12 +46,12 @@ const summaries: Ref<PlayerSummary[]> = ref([
     league_image_url: 'https://media.api-sports.io/football/leagues/262.png',
     title: 'Guadalajara Chivas',
     position: 'Attacker',
-    alignments: 30,
-    minutes: 2652,
-    rating: 7.4,
-    goals: 9,
-    assists: 6,
-    yellow_cards: 8,
+    alignments: 6,
+    minutes: 536,
+    rating: 7.5,
+    goals: 6,
+    assists: 3,
+    yellow_cards: 2,
     red_cards: 0
   },
   {
@@ -59,12 +59,12 @@ const summaries: Ref<PlayerSummary[]> = ref([
     league_image_url: 'https://media.api-sports.io/football/leagues/772.png',
     title: 'Guadalajara Chivas',
     position: 'Attacker',
-    alignments: 30,
-    minutes: 2652,
-    rating: 7.4,
-    goals: 9,
-    assists: 6,
-    yellow_cards: 8,
+    alignments: 4,
+    minutes: 356,
+    rating: 7.7,
+    goals: 2,
+    assists: 2,
+    yellow_cards: 2,
     red_cards: 0
   },
   {
@@ -72,12 +72,12 @@ const summaries: Ref<PlayerSummary[]> = ref([
     league_image_url: 'https://media.api-sports.io/football/leagues/10.png',
     title: 'Guadalajara Chivas',
     position: 'Attacker',
-    alignments: 30,
-    minutes: 2652,
-    rating: 7.4,
-    goals: 9,
-    assists: 6,
-    yellow_cards: 8,
+    alignments: 5,
+    minutes: 345,
+    rating: 7.1,
+    goals: 1,
+    assists: 1,
+    yellow_cards: 2,
     red_cards: 0
   }
 ])
@@ -104,7 +104,7 @@ function setSelectedSummary(league: League) {
 }
 </script>
 <template>
-  <div class="mx-auto max-w-screen-xl px-4 py-8 lg:px-6 lg:py-16">
+  <div class="mx-auto max-w-screen-xl p-4 lg:px-6 lg:py-8">
     <div class="flex flex-col justify-around gap-5 xl:grid xl:grid-cols-5">
       <!-- Player information -->
       <div
@@ -275,42 +275,41 @@ function setSelectedSummary(league: League) {
             </div>
             <!-- / Rating -->
 
-            <!-- Second block -->
-            <!-- Position -->
+            <!-- Goals -->
             <div
               class="flex flex-col items-center justify-center rounded-tl-lg bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
             >
-              <h3 class="font-medium text-gray-800 dark:text-white">Posición</h3>
-              <p class="my-2 text-gray-500">{{ selected_summary.position }}</p>
+              <h3 class="font-medium text-gray-800 dark:text-white">Goles</h3>
+              <p class="my-2 text-gray-500">{{ selected_summary.goals }}</p>
             </div>
-            <!-- / Position  -->
+            <!-- / Goals  -->
 
-            <!-- Alignments -->
+            <!-- Assists -->
             <div
               class="flex flex-col items-center justify-center bg-white p-2 text-center dark:border-gray-700 dark:bg-gray-800"
             >
-              <h3 class="font-medium text-gray-800 dark:text-white">Alineaciones</h3>
-              <p class="my-2 text-gray-500">{{ selected_summary.alignments }}</p>
+              <h3 class="font-medium text-gray-800 dark:text-white">Asistencias</h3>
+              <p class="my-2 text-gray-500">{{ selected_summary.assists }}</p>
             </div>
-            <!-- / Alignments -->
+            <!-- / Assists -->
 
-            <!-- Minutes -->
+            <!-- Yellow cards -->
             <div
               class="flex flex-col items-center justify-center rounded-bl-lg bg-white p-4 text-center dark:border-gray-700 dark:bg-gray-800"
             >
-              <h3 class="font-medium text-gray-800 dark:text-white">Minutos</h3>
-              <p class="my-2 text-gray-500">{{ selected_summary.minutes }}</p>
+              <h3 class="font-medium text-gray-800 dark:text-white">Tarjetas amarillas</h3>
+              <p class="my-2 text-gray-500">{{ selected_summary.yellow_cards }}</p>
             </div>
-            <!-- / Minutes -->
+            <!-- / Yellow cards -->
 
-            <!-- Rating -->
+            <!-- Red cards -->
             <div
               class="rounded-br-lgbg-white flex flex-col items-center justify-center rounded-t-none p-4 text-center dark:border-gray-700 dark:bg-gray-800"
             >
-              <h3 class="font-medium text-gray-800 dark:text-white">Calificación</h3>
-              <p class="my-2 text-gray-500">{{ selected_summary.rating }}</p>
+              <h3 class="font-medium text-gray-800 dark:text-white">Tarjetas rojas</h3>
+              <p class="my-2 text-gray-500">{{ selected_summary.red_cards }}</p>
             </div>
-            <!-- / Rating -->
+            <!-- / Red cards -->
           </div>
         </div>
         <!-- League summary -->

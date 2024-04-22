@@ -4,6 +4,7 @@ import { useRouter, RouterLink } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { type DropdownInterface, Dropdown, initDropdowns } from 'flowbite'
 import { useAppStore, type Pages } from '@/stores/app'
+import { ROUTES } from '@/router/names'
 /**
  * Types
  */
@@ -37,10 +38,10 @@ const languageSelected: Ref<Language> = ref({
 })
 
 const LINKS: Link[] = [
-  { label: 'Inicio', to: 'home' },
-  { label: 'Partidos en Vivo', to: 'live-matches' },
-  { label: 'Equipos', to: 'player' },
-  { label: 'Ligas', to: 'teams' }
+  { label: 'Inicio', to: ROUTES.HOME },
+  { label: 'Partidos en Vivo', to: ROUTES.LIVE_MATCHES },
+  { label: 'Jugador', to: ROUTES.PLAYER },
+  { label: 'Equipos', to: ROUTES.TEAMS }
 ]
 
 const languageDropdown: Ref<DropdownInterface | null> = ref(null)
@@ -51,7 +52,7 @@ const languageDropdown: Ref<DropdownInterface | null> = ref(null)
 
 function toPage(name: string) {
   // not navigate to empty views
-  if (name != 'search' && name != 'live-matches') {
+  if (name != ROUTES.SEARCH && name != ROUTES.LIVE_MATCHES) {
     $router.push({ name })
   }
   currentPage.value = name as Pages
@@ -86,7 +87,10 @@ onMounted(() => {
     <nav class="border-b border-gray-200 bg-white px-4 py-1 dark:bg-gray-800 lg:px-6 lg:py-2.5">
       <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between">
         <!-- Home link -->
-        <RouterLink to="/" class="flex items-center space-x-2 rtl:space-x-reverse">
+        <RouterLink
+          :to="{ name: ROUTES.HOME }"
+          class="flex items-center space-x-2 rtl:space-x-reverse"
+        >
           <img src="@/assets/images/logo.png" class="w-10" alt="Latam gol Logo" />
           <span
             class="self-center whitespace-nowrap text-xl font-semibold text-slate-800 dark:text-white"

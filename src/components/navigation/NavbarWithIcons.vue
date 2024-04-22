@@ -8,6 +8,7 @@ import SearchIcon from '@/components/icons/SearchIcon.vue'
 import WorldIcon from '@/components/icons/WorldIcon.vue'
 import UserGroupIcon from '@/components/icons/UserGroup.vue'
 import LayoutIcon from '@/components/icons/LayoutIcon.vue'
+import { ROUTES } from '@/router/names'
 
 /**
  * Types
@@ -28,11 +29,11 @@ const $router = useRouter()
 const { currentPage } = storeToRefs(useAppStore())
 
 const LINKS: Link[] = [
-  { label: 'Inicio', label_sr: 'Inicio', icon: HomeIcon, to: 'home' },
-  { label: 'Buscar', label_sr: 'Buscar', icon: SearchIcon, to: 'search' },
-  { label: 'Vivo', label_sr: 'Partidos en vivo', icon: WorldIcon, to: 'live-matches' },
-  { label: 'Equipos', label_sr: 'Equipos', icon: UserGroupIcon, to: 'player' },
-  { label: 'Ligas', label_sr: 'Ligas', icon: LayoutIcon, to: 'teams' }
+  { label: 'Inicio', label_sr: 'Inicio', icon: HomeIcon, to: ROUTES.HOME },
+  { label: 'Buscar', label_sr: 'Buscar', icon: SearchIcon, to: ROUTES.SEARCH },
+  { label: 'Vivo', label_sr: 'Partidos en vivo', icon: WorldIcon, to: ROUTES.LIVE_MATCHES },
+  { label: 'Jugador', label_sr: 'Jugador', icon: UserGroupIcon, to: ROUTES.PLAYER },
+  { label: 'Equipos', label_sr: 'Equipos', icon: LayoutIcon, to: ROUTES.TEAMS }
 ]
 
 /**
@@ -40,7 +41,7 @@ const LINKS: Link[] = [
  */
 function toPage(name: string) {
   // not navigate to empty views
-  if (name != 'search' && name != 'live-matches') {
+  if (name != ROUTES.SEARCH && name != ROUTES.LIVE_MATCHES) {
     $router.push({ name })
   }
   currentPage.value = name as Pages
