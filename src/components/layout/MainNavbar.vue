@@ -3,7 +3,7 @@ import { type Ref, ref, onMounted } from 'vue'
 import { useRouter, RouterLink } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { type DropdownInterface, Dropdown, initDropdowns } from 'flowbite'
-import { useAppStore } from '@/stores/app'
+import { useAppStore, type Pages } from '@/stores/app'
 /**
  * Types
  */
@@ -54,7 +54,7 @@ function toPage(name: string) {
   if (name != 'search' && name != 'live-matches') {
     $router.push({ name })
   }
-  currentPage.value = name
+  currentPage.value = name as Pages
 }
 
 function setLanguage(lang: Language) {

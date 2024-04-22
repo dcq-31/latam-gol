@@ -2,7 +2,7 @@
 import type { Component } from 'vue'
 import { useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia'
-import { useAppStore } from '@/stores/app'
+import { useAppStore, type Pages } from '@/stores/app'
 import HomeIcon from '@/components/icons/HomeIcon.vue'
 import SearchIcon from '@/components/icons/SearchIcon.vue'
 import WorldIcon from '@/components/icons/WorldIcon.vue'
@@ -43,7 +43,7 @@ function toPage(name: string) {
   if (name != 'search' && name != 'live-matches') {
     $router.push({ name })
   }
-  currentPage.value = name
+  currentPage.value = name as Pages
 }
 </script>
 

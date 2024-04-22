@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
-import type { Team } from '@/types/team'
+import type { Team } from '@/types/teams'
 
 /**
  * Props
