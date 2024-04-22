@@ -32,14 +32,15 @@ const LINKS: Link[] = [
   { label: 'Buscar', label_sr: 'Buscar', icon: SearchIcon, to: 'search' },
   { label: 'Vivo', label_sr: 'Partidos en vivo', icon: WorldIcon, to: 'live-matches' },
   { label: 'Equipos', label_sr: 'Equipos', icon: UserGroupIcon, to: 'player' },
-  { label: 'Ligas', label_sr: 'Ligas', icon: LayoutIcon, to: 'leagues' }
+  { label: 'Ligas', label_sr: 'Ligas', icon: LayoutIcon, to: 'teams' }
 ]
 
 /**
  * Methods
  */
 function toPage(name: string) {
-  if (name != 'search' && name != 'leagues' && name != 'live-matches') {
+  // not navigate to empty views
+  if (name != 'search' && name != 'live-matches') {
     $router.push({ name })
   }
   currentPage.value = name
@@ -55,11 +56,11 @@ function toPage(name: string) {
         v-for="(link, i) in LINKS"
         :key="`navbar-with-icons-${i}`"
         type="button"
-        class="mx-auto w-full first:rounded-s-full last:rounded-e-full hover:bg-gray-50 dark:hover:bg-gray-800"
+        class="mx-auto w-full first:rounded-s-full last:rounded-e-full"
         @click="toPage(link.to)"
       >
         <div
-          class="bottom-0 inline-flex flex-col items-center justify-center rounded-2xl p-2.5 text-gray-800 transition-[bottom] duration-200"
+          class="bottom-0 inline-flex flex-col items-center justify-center rounded-2xl p-2.5 text-gray-500 transition-[bottom] duration-200 hover:text-gray-700"
           :class="{ active: currentPage == link.to }"
         >
           <Component :is="link.icon" class="h-6 w-6" />
@@ -73,6 +74,6 @@ function toPage(name: string) {
 
 <style scoped>
 .active {
-  @apply relative bottom-5 bg-slate-800 text-white;
+  @apply relative bottom-5 bg-blue-600 text-white;
 }
 </style>

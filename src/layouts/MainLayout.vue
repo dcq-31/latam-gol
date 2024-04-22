@@ -5,12 +5,12 @@ import NavbarWithIcons from '@/components/navigation/NavbarWithIcons.vue'
 </script>
 
 <template>
-  <div class="pb-20">
-    <MainNavbar />
+  <div class="pb-20 md:pb-0">
+    <MainNavbar class="hidden md:block" />
     <main class="bg-white pt-12 dark:bg-gray-900">
       <slot></slot>
     </main>
-    <NavbarWithIcons />
+    <NavbarWithIcons class="md:hidden" />
     <MainFooter />
   </div>
 </template>
