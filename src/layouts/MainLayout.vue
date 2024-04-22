@@ -7,7 +7,7 @@ import NavbarWithIcons from '@/components/navigation/NavbarWithIcons.vue'
 <template>
   <div>
     <MainNavbar class="hidden md:block" />
-    <main class="bg-white dark:bg-gray-900 md:pt-4">
+    <main class="bg-gray-50 dark:bg-gray-900 md:pt-4">
       <slot></slot>
     </main>
     <NavbarWithIcons class="md:hidden" />
