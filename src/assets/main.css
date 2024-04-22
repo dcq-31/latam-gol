@@ -30,7 +30,7 @@
   * Variants
   **/
   .btn-blue {
-    @apply bg-blue-700 text-white hover:bg-blue-800 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800;
+    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-400 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800;
   }
 
   /**
@@ -41,6 +41,6 @@
   }
 
   .input-blue {
-    @apply border-gray-400 bg-gray-50 text-gray-900 placeholder-gray-500 focus:border-blue-50 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700  dark:text-white dark:focus:border-blue-500 dark:focus:ring-blue-500;
+    @apply border-gray-400 bg-gray-50 text-gray-900 placeholder-gray-500  focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700  dark:text-white dark:focus:border-blue-500 dark:focus:ring-blue-500;
   }
 }
