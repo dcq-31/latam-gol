@@ -10,7 +10,7 @@ Este repositorio contiene el código fuente del sitio web demo de [LATAM Gol](ht
 
 - **Flowbite**: Flowbite es un conjunto de componentes y utilidades basado en Tailwind CSS que se utiliza para agilizar el desarrollo y mejorar la coherencia del diseño.
 
-- **Aplicación Web Progresiva (PWA)**: xperiencia de usuario mejorada, accesibilidad offline, instalación fácil y actualizaciones automáticas.
+- **Aplicación Web Progresiva (PWA)**: Brinda experiencia de usuario mejorada, accesibilidad offline, instalación fácil y actualizaciones automáticas.
 
 ## Demo
 
